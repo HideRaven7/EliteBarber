@@ -19,8 +19,8 @@
         </div>
     </header>
     <div class="container mt-5">
-        <h2 class="text-center">Registro de clientes</h2>
-        <table class="table table-hover table-bordered table-striped">
+        <h4 class="text-center">Registro de clientes</h4>
+        <table class="table table-hover table-bordered table-striped t-clientes">
             <thead class="table-dark">
                 <tr>
                     <th># Turno</th>
@@ -29,22 +29,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for cliente in clientes%}
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Juan</td>
-                    <td>809-494-5458</td>
+                    <th scope="row">{{cliente.turno}}</th>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.telefono}}</td>
                     
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>María</td>
-                    <td>829-557-7898</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Carlos</td>
-                    <td>849-980-6785</td>
-                </tr>
+                {%endfor%}
             </tbody>
         </table>
     </div>

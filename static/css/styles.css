@@ -191,7 +191,7 @@ footer {
   width: 50px;
   bottom: -13px;
   right: 310px; 
-  position: relative;;
+  position: relative;
 }
 
 .cont {
@@ -243,19 +243,30 @@ footer {
     margin-top: 30%;
 }
 /* Pagina index  */
-/* #viewClients {
-    margin-left: 30%;
-    bottom: 55px;
-    position: relative;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-family: miFuenteBebas;
-    font-weight: normal;
-} */
+
+.t-clientes {
+    text-align: center;
+}
 
 th {
     color: aliceblue;
 }
+
+.text-center {
+    color: white;
+    font-family: miFuenteBebas;
+    margin: 1% 0;
+}
+
+.accion-td {
+    display: flex;
+    gap: 5px;
+    /* max-width: fit-content; */
+}
+
+/* .accion-td button {
+    width: 100px;
+} */
 
 @media screen and (max-width:600px) {
     .clientForm{

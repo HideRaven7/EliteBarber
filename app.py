@@ -24,7 +24,10 @@ def inicio():
 
 @app.route('/clientes/')
 def clientes():
-    return render_template('./eliteBS/clientes.html')
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM `clientes`')
+    clientes = cursor.fetchall()
+    return render_template('./eliteBS/clientes.html', clientes=clientes)
 
 @app.route('/agregar/cliente/', methods=['POST'])
 def agg_client():
@@ -59,7 +62,27 @@ def admin():
 
 @app.route('/admin/clientes/')
 def admin_cliente():
-    return render_template('./admin/clientes.html')
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('SELECT * FROM `clientes`')
+    clientes = cursor.fetchall()
+    
+    return render_template('./admin/clientes.html', clientes=clientes)
+
+@app.route('/eliminar/cliente/<int:id>', methods=['POST'])
+def eliminar_cliente(id):
+    conexion = mysql.connection
+    cursor = conexion.cursor()
+    
+    cursor.execute("DELETE FROM clientes WHERE id = %s", (id,))
+    
+    # Confirmar la transacción
+    conexion.commit()
+    
+    # Cerrar la conexión
+    cursor.close()
+    conexion.close()
+    
+    return redirect('/admin/clientes/')
 
 if __name__ == '__main__':
     app.run(port = 3000, debug=True)

@@ -13,38 +13,39 @@
         <div class="header-cont">
             <h1>Elite Unisex BarberShop</h1>
             <div class="lado-izquierdo">
-                <a href="/templates/eliteBS/index.html">Home</a>
-                <a href="/admin/">Administrar</a>
+                <a href="/">Salir</a>
             </div>
         </div>
     </header>
     <div class="container mt-5">
-        <h2 class="text-center">Registro de clientes</h2>
+        <h2 class="text-center mb-4">Administracion de clientes.</h2>
         <table class="table table-hover table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
                     <th># Turno</th>
                     <th>Nombre</th>
                     <th>Telefono</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Juan</td>
-                    <td>809-494-5458</td>
-                    
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>María</td>
-                    <td>829-557-7898</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Carlos</td>
-                    <td>849-980-6785</td>
-                </tr>
+                {% for cliente in clientes%}
+                    <tr>
+                        <th scope="row">{{cliente.turno}}</th>
+                        <td>{{cliente.nombre}}</td>
+                        <td>{{cliente.telefono}}</td>
+                        <td class="accion-td">
+                            <form action="/editar/cliente/" method="post">
+                                <input type="hidden" value="{{cliente.id}}">
+                                <button type="submit" class="btn btn-primary btn-sm">Editar</button>
+                            </form>
+                            <form action="/eliminar/cliente/{{cliente.id}}" method="post">
+                                <input type="hidden" value="{{cliente.id}}">
+                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {%endfor%}
             </tbody>
         </table>
     </div>
