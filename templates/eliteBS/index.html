@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Unisex BarberShop</title>
-     <link rel="icon" href="/static/imagenes/logo.png">
+    <link rel="icon" href="/static/imagenes/logo.png">
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Elite Unisex BarberShop</h1>
-
-        <!-- <figure>
-            <img src="/static/imagenes/logo.png" alt="">
-        </figure> -->
+        <div class="header-cont">
+            <h1>Elite Unisex BarberShop</h1>
+            <div class="lado-izquierdo">
+                <a href="/clientes/">Clientes</a>
+                <a href="/admin/">administrar</a>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-       <form class="clientForm">
-        <input type="text" placeholder="Introduzca su nombre" required autofocus autocomplete="on">
-        <input type="tel" placeholder="Introduzca su numero de telefono" maxlength="11">
-        <input type="submit" value="Registrarse">
-       </form>
-       
-        <a href="/templates/eliteBS/clientes.html" id="viewClients">Ver Clientes</a>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <h4 class="mensaje-home">{{ message }}</h4>
+    {% endfor %}
+    {% endif %}
+{% endwith %}
 
+    <div class="container">
+        <form action="/agregar/cliente/" method="post" class="clientForm">
+            <h3>Registrar cliente</h3>
+            <br>
+            <input type="text" placeholder="Introduzca su nombre" name="nombre" required autofocus autocomplete="on">
+            <br>
+            <input type="tel" placeholder="Introduzca su numero de telefono" name="telefono" maxlength="11">
+            <br>
+            <input type="submit" value="Registrarse" id="boton-submit">
+            <br>
+        </form>
     </div>
 
     <script src="/static/js/script.js"></script>

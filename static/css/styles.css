@@ -22,50 +22,244 @@ body {
     min-height: 100%;
 }
 
-h1 {
+.header-cont h1 {
+    color: aliceblue;
     font-family: miFuenteLime;
     font-weight: normal;
     font-size: 22px;
-    color: rgb(0, 0, 0);
     margin-left: 4%;
     padding: 15px;
     display: flex;
     justify-content: flex-start;
 }
 
+.header-cont a {
+    color: aliceblue;
+    font-family: miFuenteLime;
+    text-decoration: none;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.504);
+}
+
+.header-cont a:first-of-type {
+    margin-right: 8px;
+}
+
+.header-cont a:hover {
+    color: rgba(240, 248, 255, 0.637);
+}
+
 header {
-    background-color: aliceblue;
     height: 55px;
 }
 
-#viewClients {
+.header-cont {
+    display: flex;
+    width: 98%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* #viewClients {
     margin-left: 30%;
     bottom: 55px;
     position: relative;
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-family: miFuenteBebas;
     font-weight: normal;
-}
+    display: none;
+} */
 
 th {
     color: aliceblue;
 }
 
 footer {
-    background-color: aliceblue;
+    color: aliceblue;
     text-align: center;
-    padding: 1%;
-    margin-top: 45%;
+    width: 100%;
+    bottom: 2%;
+    position: absolute;
 }
 
 
-/* figure img {
-    width: 3%;
-    bottom: 30px;
+.clientForm{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 10%;
+    border: 1px solid rgba(255, 255, 255, 0.229);
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+}
+
+.clientForm input {
+    width: 60%;
+    padding: 5px 2px;
+    margin: 0 auto;
+    outline: none;
+}
+
+.clientForm h3 {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: miFuenteBebas;
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+#boton-submit {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.284);
+    border: 1px solid white;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: miFuenteBebas;
+    font-weight: normal;
+    box-shadow: 2px 2px gray;
+}
+
+.mensaje-home {
+    border: 1px solid rgba(255, 255, 255, 0.229);
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    padding: 4px 5px;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    left: 37%;
+}
+
+/* Login */
+.iniciar_container {
+    backdrop-filter: blur(10px);
+    background-color: transparent;
+    margin: 0 auto;
+    margin-top: 10%;
+    border:  1px solid #ffffff;
+    width: 33%;
+    border-radius: 12px;
+}
+
+.iniciar_container h2 {
+    font-family: miFuenteBebas;
+    font-size: 28px;
+    font-weight: normal;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;   
+}
+
+.titulo1 {
+    top: 20px;
     position: relative;
-    
+}
+
+.iniciar_container input {
+    background-color: #161515a1;
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    margin: 5%;
+    margin-left: 10%;
+    border: none;
+    bottom: -30px;
+    position: relative;
+    padding-left: 5%;
+    font-size: 16px;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    border-radius: 5px;
+}
+
+.iniciar_container input {
+    color: #fff;
+}
+
+.iniciar_container img {
+    width: 20px;
+    margin-left: 380px;
+}
+
+.iniciar_container .imagen {
+  width: 50px;
+  bottom: -13px;
+  right: 310px; 
+  position: relative;;
+}
+
+.cont {
+    width: 20px;
+    left: -310px;   
+    bottom: -13px;
+    position: relative;
+}
+
+.iniciar_container::placeholder {
+    color: #ffffff83;
+    font-family: miFuentePath;
+    font-size: 22px;    
+}
+
+.btn {
+    width:220px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.btn2 {
+    position: absolute;
+    left: 260px;
+    top: 197px;
+    border-radius: 10px;
+    width: 220px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.access {
+    background-color: #0077ff96;
+    font-family: miFuenteBebas;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    justify-content: center;
+    display: flex;
+    height: 28px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 3px;   
+    color: #ffffff;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+    margin: 0 auto;
+    margin-top: 30%;
+}
+/* Pagina index  */
+/* #viewClients {
+    margin-left: 30%;
+    bottom: 55px;
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: miFuenteBebas;
+    font-weight: normal;
 } */
 
+th {
+    color: aliceblue;
+}
 
-/* Formulario */
+@media screen and (max-width:600px) {
+    .clientForm{
+        margin-top: 20%;
+        width: 80%;
+    }
+}
