@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fuentes */
+@font-face {
+    font-family: miFuenteLime;
+    src: url(/static/fuentes/Limelight-Regular.ttf);
+}
+
+@font-face {
+    font-family: miFuenteBebas;
+    src: url(/static/fuentes/BebasNeue-Regular.ttf);
+}
+body {
+    background-image: url(/static/imagenes/350526637_922725872517111_7905315781257202805_n\ \(2\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100%;
+}
+
+h1 {
+    font-family: miFuenteLime;
+    font-weight: normal;
+    font-size: 22px;
+    color: rgb(0, 0, 0);
+    margin-left: 4%;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header {
+    background-color: aliceblue;
+    height: 55px;
+}
+
+#viewClients {
+    margin-left: 30%;
+    bottom: 55px;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-family: miFuenteBebas;
+    font-weight: normal;
+}
+
+th {
+    color: aliceblue;
+}
+
+footer {
+    background-color: aliceblue;
+    text-align: center;
+    padding: 1%;
+    margin-top: 45%;
+}
+
+
+/* figure img {
+    width: 3%;
+    bottom: 30px;
+    position: relative;
+    
+} */
+
+
+/* Formulario */
